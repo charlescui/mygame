@@ -1,0 +1,21 @@
+{
+    "preload": [
+        {
+            "type": "image",
+            "key": "preloadBar",
+            "url": "assets/img/preload-bar.png"
+        }
+    ],
+    "main": [
+        {
+            "type": "image",
+            "key": "phaserLogo",
+            "url": "assets/img/phaser-logo.png"
+        },
+        {
+            "type": "audio",
+            "key": "gameMusic",
+            "urls": ["assets/snd/funk_game_loop.mp3", "assets/snd/funk_game_loop.ogg"]
+        }
+    ]
+}
