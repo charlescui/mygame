@@ -1,4 +1,3 @@
-Parse = require 'Parse'
 Phaser = require 'Phaser'
 
 config = require './config.coffee'

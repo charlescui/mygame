@@ -1,4 +1,4 @@
 module.exports =
-  width: 960
-  height: 640
+  width: 640
+  height: 480
   pack: 'assets/pack.json'

@@ -13,6 +13,36 @@
             "url": "assets/img/phaser-logo.png"
         },
         {
+            "type": "image",
+            "key": "background",
+            "url": "assets/img/background.png"
+        },
+        {
+            "type": "image",
+            "key": "bullet",
+            "url": "assets/img/bullet.png"
+        },
+        {
+            "type": "image",
+            "key": "flame",
+            "url": "assets/img/flame.png"
+        },
+        {
+            "type": "image",
+            "key": "tank",
+            "url": "assets/img/tank.png"
+        },
+        {
+            "type": "image",
+            "key": "target",
+            "url": "assets/img/target.png"
+        },
+        {
+            "type": "image",
+            "key": "turret",
+            "url": "assets/img/turret.png"
+        },
+        {
             "type": "audio",
             "key": "gameMusic",
             "urls": ["assets/snd/funk_game_loop.mp3", "assets/snd/funk_game_loop.ogg"]
