@@ -10,13 +10,6 @@ class Preload extends Phaser.State
     # Show loading screen
     @load.setPreloadSprite @add.sprite @game.world.centerX - 160, @game.world.centerY - 16, 'preloadBar'
 
-    # Initialize Parse
-    Parse.initialize '[Application ID]', '[JavaScript Key]'
-    Parse.Analytics.track 'load', {
-      language: window.navigator.language,
-      platform: window.navigator.platform
-    }
-
     # Set up game defaults
     @stage.backgroundColor = 'black'
 

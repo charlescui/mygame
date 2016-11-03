@@ -8,6 +8,7 @@ var coffeeify  = require('coffeeify');
 var del        = require('del');
 var buffer     = require('vinyl-buffer');
 var vinyl      = require('vinyl-source-stream');
+var deploy 	   = require('gulp-gh-pages');
 var paths = {
     assets: [
         './app/assets/**/*.*',
@@ -17,7 +18,8 @@ var paths = {
     dist: './dist',
     css: './app/css/main.styl',
     js: './app/js/app.coffee',
-    lint: './app/js/*.coffee'
+    lint: './app/js/*.coffee',
+    deploy: './dist/**/*'
 };
 
 gulp.task('lint', function() {
@@ -27,8 +29,8 @@ gulp.task('lint', function() {
         .pipe(coffeelint.reporter('failOnWarning'));
 });
 
-gulp.task('clean', function(cb) {
-    del(paths.dist, cb);
+gulp.task('clean', function() {
+    return del(paths.dist);
 });
 
 gulp.task('copy-assets', function() {
@@ -37,6 +39,7 @@ gulp.task('copy-assets', function() {
 });
 
 gulp.task('compile-css', function() {
+    console.log(paths.css)
     return gulp.src(paths.css)
         .pipe(stylus({
             compress: true
@@ -55,15 +58,8 @@ gulp.task('compile-js', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('copy-assets', 'compile-css', 'compile-js');
+    gulp.run('copy-assets', 'compile-css', 'compile-js');
 });
-
-var deploy = require('gulp-gh-pages');
-
-var paths = {
-    // Other paths
-    deploy: './dist/**/*'
-};
 
 gulp.task('deploy', function() {
     return gulp.src(paths.deploy)
